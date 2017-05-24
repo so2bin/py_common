@@ -40,7 +40,11 @@ fp_corpora_serialize = calcAbsPath(PATH_TFIDF_FOLDER, FILENAME_CORPORA_SERIALIZE
 fp_corpora_ids = calcAbsPath(PATH_TFIDF_FOLDER, FILENAME_DOC_IDS)
 fp_index = calcAbsPath(PATH_TFIDF_FOLDER, FILENAME_INDEX)
 
-
+def init():
+    data_folder_path = calcAbsPath(PATH_TFIDF_FOLDER)
+    if not os.path.exists(data_folder_path):
+        os.makedirs(data_folder_path)
+init()
 
 def tex_similarity(docs):
     texts = []
